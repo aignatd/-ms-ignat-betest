@@ -199,9 +199,9 @@
 							]
 						},
 						"url": {
-							"raw": "{{localhost}}/auth/token",
+							"raw": "{{azurehost}}/auth/token",
 							"host": [
-								"{{localhost}}"
+								"{{azurehost}}"
 							],
 							"path": [
 								"auth",
