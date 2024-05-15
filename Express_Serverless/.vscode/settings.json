@@ -1,0 +1,5 @@
+{
+  "appService.showBuildDuringDeployPrompt": false,
+  "appService.defaultWebAppToDeploy": "/subscriptions/3e8ae59a-7c66-47e0-b0e5-6a11ba291d6c/resourceGroups/Artolanggeng-Solusi-Inovasi/providers/Microsoft.Web/sites/ms-ignat-betest",
+  "appService.deploySubpath": "."
+}
