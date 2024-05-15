@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "fa426736-7377-437b-85a9-d62b28b913ac",
+		"name": "Jenius",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "741147",
+		"_collection_link": "https://kunyil.postman.co/workspace/Artolanggeng-Solusi-Inovasi~21bf15f1-a8ee-44a6-ac4f-5e1de88faaf2/collection/741147-fa426736-7377-437b-85a9-d62b28b913ac?action=share&source=collection_link&creator=741147"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/user/data/identityNumber/5678",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"user",
+								"data",
+								"identityNumber",
+								"5678"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"aignatd3\",\r\n    \"accountNumber\": \"1234\",\r\n    \"emailAddress\": \"ignat@hotmail.com\",\r\n    \"identityNumber\": \"5678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/user/data/accountNumber/1234",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"user",
+								"data",
+								"accountNumber",
+								"1234"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"aignatd3\",\r\n    \"accountNumber\": \"1234\",\r\n    \"emailAddress\": \"ignat@hotmail.com\",\r\n    \"identityNumber\": \"5678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/user/data",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"user",
+								"data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/user/data/identityNumber/5678",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"user",
+								"data",
+								"identityNumber",
+								"5678"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Generate Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(pm.response.text());\r",
+									"console.log(\"Response ->\", jsonData);\r",
+									"\r",
+									"if (jsonData.data.tokenData) {\r",
+									"    pm.environment.set(\"token\", jsonData.data.tokenData);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localhost}}/auth/token",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
