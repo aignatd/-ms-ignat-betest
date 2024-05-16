@@ -5,7 +5,7 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      "route": "data/{field}/{id}",
+      "route": "user/data/{field}/{id}",
       "methods": [
         "patch"
       ]

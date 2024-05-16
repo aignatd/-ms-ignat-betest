@@ -5,9 +5,9 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      "route": "user/data/{field}/{id}",
+      "route": "auth/token",
       "methods": [
-        "get"
+        "post"
       ]
     },
     {

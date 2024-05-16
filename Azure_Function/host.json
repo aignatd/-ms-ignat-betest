@@ -8,12 +8,7 @@
       }
     }
   },
-  "extensions": {
-    "http": {
-      "routePrefix": "user"
-    }
-  },
   "functionTimeout": "00:06:00",
-  "functions": [ "get", "new", "patch", "delete" ],
+  "functions": [ "get", "new", "patch", "delete", "token" ],
   "watchDirectories": [ "models", "config" ]
 }

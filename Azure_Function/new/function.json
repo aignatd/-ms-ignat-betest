@@ -5,7 +5,7 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      "route": "data",
+      "route": "user/data",
       "methods": [
         "post"
       ]

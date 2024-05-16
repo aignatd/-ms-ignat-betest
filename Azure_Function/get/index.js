@@ -1,8 +1,20 @@
 const db = require("../models/conmodel");
 const user = db.user;
 
+const auth = require("../token/authctrl");
+
 let client = null;
 module.exports = async function (context, req) {
+  context.log('---------- Check Token ----------');
+  const { code, response } = await auth.checktoken(req.headers, context);
+
+  context.log('Result ->', response);
+
+  if (code != 0) {
+    await context.res.status(code).json(response);
+    return context.close();
+  };
+
   context.log('---------- Get User ----------');
   context.log('Parameter ->', req.params);
 
