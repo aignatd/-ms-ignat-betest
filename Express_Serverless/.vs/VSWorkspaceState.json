@@ -7,6 +7,6 @@
     "\\models",
     "\\routes"
   ],
-  "SelectedNode": "\\routes\\auth.js",
+  "SelectedNode": "\\controllers\\userctrl.js",
   "PreviewInSolutionExplorer": false
 }
